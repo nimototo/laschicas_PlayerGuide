@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>ラスチカス 選手名鑑 - インストール</title>
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --border: rgba(148, 163, 184, 0.12);
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', 'Meiryo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100dvh;
+      padding: calc(24px + var(--safe-top)) 20px calc(32px + var(--safe-bottom));
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hero { text-align: center; margin-bottom: 28px; }
+    .hero__icon {
+      width: 88px; height: 88px; border-radius: 20px;
+      margin: 0 auto 16px; display: block;
+    }
+    .hero__title { font-size: 22px; font-weight: 700; }
+    .hero__desc { font-size: 14px; color: var(--text-muted); margin-top: 8px; }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .card__title {
+      font-size: 15px; font-weight: 700; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .card__badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 24px; height: 24px; background: var(--accent);
+      color: var(--bg); border-radius: 50%; font-size: 12px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .steps { list-style: none; counter-reset: step; }
+    .steps li {
+      position: relative; padding-left: 28px; margin-bottom: 10px;
+      font-size: 14px; color: var(--text-muted);
+    }
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute; left: 0; top: 1px;
+      width: 20px; height: 20px; background: var(--accent-soft);
+      color: var(--accent); border-radius: 50%;
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .steps li strong { color: var(--text); }
+    .launch-btn {
+      display: block; width: 100%; height: 52px;
+      background: linear-gradient(135deg, var(--accent), #818cf8);
+      color: var(--bg); border: none; border-radius: 14px;
+      font-size: 16px; font-weight: 700; font-family: inherit;
+      text-decoration: none; text-align: center; line-height: 52px;
+      margin-top: 8px; cursor: pointer;
+    }
+    .launch-btn:active { opacity: 0.85; }
+    .note {
+      font-size: 12px; color: var(--text-muted);
+      background: var(--accent-soft); border-radius: 10px;
+      padding: 12px; margin-top: 12px;
+    }
+    .status {
+      text-align: center; font-size: 13px; color: var(--accent);
+      margin-top: 16px; font-weight: 600;
+    }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <img class="hero__icon" src="icons/apple-touch-icon.png" alt="選手名鑑アイコン">
+    <h1 class="hero__title">ラスチカス 選手名鑑</h1>
+    <p class="hero__desc">南山大学女子ラクロス部<br>Safari で開き、ホーム画面に追加してご利用ください</p>
+  </div>
+
+  <div class="card">
+    <h2 class="card__title"><span class="card__badge">✓</span>接続確認</h2>
+    <p id="downloadStatus" style="font-size:14px;color:var(--text-muted);">アプリの読み込みを確認中...</p>
+  </div>
+
+  <div class="card">
+    <h2 class="card__title"><span class="card__badge">1</span>ホーム画面に追加（iPhone）</h2>
+    <ol class="steps">
+      <li>下の <strong>「アプリを起動」</strong> ボタンをタップして Safari で開く</li>
+      <li>画面下部の <strong>共有ボタン</strong>（□に↑）をタップ</li>
+      <li><strong>「ホーム画面に追加」</strong> を選択</li>
+      <li>名前を「ラスチカス」のまま <strong>「追加」</strong> をタップ</li>
+      <li>ホーム画面のアイコンから起動できる</li>
+    </ol>
+    <p class="note">※ Safari 以外のブラウザでは「ホーム画面に追加」が使えない場合があります。</p>
+  </div>
+
+  <div class="card">
+    <h2 class="card__title"><span class="card__badge">2</span>アプリを起動</h2>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">
+      ホーム画面に追加後はアイコンから起動してください。設定前の確認にも使えます。
+    </p>
+    <a class="launch-btn" href="index.html">アプリを起動</a>
+    <p class="status hidden" id="installDone"></p>
+  </div>
+
+  <div class="card">
+    <h2 class="card__title"><span class="card__badge">?</span>うまくいかない場合</h2>
+    <ol class="steps">
+      <li>管理者から配布された <strong>HTTPS の URL</strong> を Safari で開いているか確認</li>
+      <li>ページが真っ白の場合は URL をコピーし直してアドレスバーに貼り付け</li>
+      <li>「ホーム画面に追加」が出ない場合は <strong>Safari</strong> で開き直す</li>
+      <li>初回以降はキャッシュで閲覧できます（オフラインでも可）</li>
+    </ol>
+  </div>
+
+  <script>
+    fetch('app.js', { method: 'HEAD' })
+      .then(res => {
+        const el = document.getElementById('downloadStatus');
+        if (res.ok) {
+          el.textContent = '✓ アプリを読み込めました。次の手順に進んでください。';
+          el.style.color = '#38bdf8';
+        } else {
+          el.textContent = '⚠ アプリファイルが見つかりません。URL が正しいか確認してください。';
+          el.style.color = '#fbbf24';
+        }
+      })
+      .catch(() => {
+        const el = document.getElementById('downloadStatus');
+        el.textContent = '⚠ HTTPS の URL から開いているか確認してください。';
+        el.style.color = '#fbbf24';
+      });
+
+    if (localStorage.getItem('meikan_installed')) {
+      const done = document.getElementById('installDone');
+      done.textContent = '設定済みです。ホーム画面のアイコンから起動できます。';
+      done.classList.remove('hidden');
+    }
+
+    document.querySelector('.launch-btn').addEventListener('click', () => {
+      localStorage.setItem('meikan_installed', '1');
+    });
+  </script>
+</body>
+</html>
